@@ -518,6 +518,114 @@ body{
 }
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+
+/* ═══ MODE SELECTOR ═══ */
+#mode-sel{display:flex;align-items:center;gap:3px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:3px;margin-left:10px}
+.mode-btn{background:transparent;border:none;border-radius:6px;color:var(--text2);font-size:11.5px;font-weight:600;padding:4px 10px;cursor:pointer;transition:all .18s;font-family:inherit;white-space:nowrap}
+.mode-btn:hover{color:var(--text)}
+.mode-btn.on{background:var(--accent);color:#fff}
+
+/* ═══ VOCAB PANEL ═══ */
+#vocab-panel{position:fixed;right:18px;top:70px;width:340px;background:var(--bg2);border:1px solid var(--border2);border-radius:16px;box-shadow:0 18px 55px rgba(0,0,0,.55);z-index:400;display:none;flex-direction:column;overflow:hidden;max-height:calc(100vh - 90px);animation:tpin .28s cubic-bezier(.4,0,.2,1)}
+#vocab-panel.open{display:flex}
+.vp-hd{padding:12px 15px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-shrink:0}
+.vp-title{font-size:13.5px;font-weight:700;flex:1}
+.vp-x{background:none;border:none;color:var(--text3);cursor:pointer;font-size:15px;padding:2px;transition:color .15s;line-height:1}
+.vp-x:hover{color:var(--red)}
+.vp-bd{padding:13px 15px;overflow-y:auto;flex:1}
+.vp-acts{display:flex;gap:6px;margin-bottom:12px}
+#vocab-inp{flex:1;background:var(--bg);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:13px;padding:6px 10px;outline:none;font-family:inherit}
+#vocab-inp:focus{border-color:var(--accent)}
+#vocab-add-btn{background:var(--accent);border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:600;padding:6px 12px;cursor:pointer;transition:opacity .18s;font-family:inherit;white-space:nowrap}
+#vocab-add-btn:hover{opacity:.88}
+.vp-review{margin-bottom:12px}
+#review-btn{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:10px;color:#fff;font-size:13px;font-weight:600;padding:8px 12px;cursor:pointer;transition:opacity .18s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:6px}
+#review-btn:hover{opacity:.88}
+#review-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ═══ VOCAB ITEM ═══ */
+.vitem{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:8px;transition:border-color .18s}
+.vitem:hover{border-color:var(--border2)}
+.vw{font-size:14px;font-weight:700;color:var(--sky);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.vw .vlevel{font-size:10px;font-weight:600;color:var(--gold);background:rgba(245,158,11,.12);padding:1px 6px;border-radius:4px;text-transform:uppercase}
+.vm{font-size:12.5px;color:var(--text);direction:rtl;text-align:right;margin-bottom:3px}
+.vpro{font-size:11.5px;color:var(--gold);direction:rtl;text-align:right;font-style:italic;margin-bottom:3px}
+.vex{font-size:12px;color:var(--text2);font-style:italic;margin-bottom:6px}
+.vmeta{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3)}
+.vst{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:3px}
+.vst.new{background:var(--sky)}.vst.learning{background:var(--accent)}.vst.familiar{background:var(--green)}.vst.mastered{background:var(--gold)}
+.vdel{margin-left:auto;background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:2px;transition:color .15s}
+.vdel:hover{color:var(--red)}
+.vempty{text-align:center;padding:20px 10px;color:var(--text3);font-size:12.5px}
+
+/* ═══ REVIEW CARD ═══ */
+.rcard{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
+.rword{font-size:16px;font-weight:700;color:var(--sky);margin-bottom:4px}
+.rmeta{font-size:12px;color:var(--text2);margin-bottom:10px}
+.rq{font-size:14px;color:var(--text);margin-bottom:10px;line-height:1.6}
+.rinp{width:100%;background:var(--bg);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:13.5px;padding:8px 11px;outline:none;font-family:inherit;margin-bottom:8px}
+.rinp:focus{border-color:var(--accent)}
+.rans{font-size:13px;padding:8px 11px;border-radius:8px;margin-bottom:8px;display:none}
+.rans.ok{background:rgba(52,211,153,.1);border:1px solid var(--green);color:var(--green)}
+.rans.no{background:rgba(248,113,113,.1);border:1px solid var(--red);color:var(--red)}
+.racts{display:flex;gap:6px}
+.racts button{flex:1;background:var(--bg4);border:1px solid var(--border2);border-radius:7px;color:var(--text2);font-size:12px;font-weight:600;padding:6px;cursor:pointer;transition:all .18s;font-family:inherit}
+.racts button:hover{background:var(--border);color:var(--text)}
+.racts button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.racts button.primary:hover{opacity:.88}
+
+/* ═══ CORRECTION BLOCK ═══ */
+.mbub .correction-block{
+  background: linear-gradient(145deg, #1a1a2e, #16162a);
+  border: 1px solid var(--border2);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.mbub .correction-block .cb-title{
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.mbub .correction-block .cb-wrote{
+  color: var(--text2);
+  margin-bottom: 6px;
+}
+.mbub .correction-block .cb-better{
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.mbub .correction-block .cb-note{
+  color: var(--text2);
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ═══ LEARNING PROMPT ═══ */
+#lp-area{width:100%;min-height:120px;background:var(--bg);border:1px solid var(--border2);border-radius:9px;color:var(--text);font-size:13px;padding:10px 12px;outline:none;font-family:inherit;resize:vertical;line-height:1.6}
+#lp-area:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,106,255,.1)}
+.lp-hint{font-size:11px;color:var(--text3);margin-top:6px;line-height:1.5}
+.lp-count{font-size:11px;color:var(--text3);margin-top:4px;text-align:right}
+.lp-count.warn{color:var(--red)}
+
+/* ═══ LEVEL SELECTOR ═══ */
+.lvl-sel{display:flex;gap:5px;flex-wrap:wrap}
+.lvl-btn{background:var(--bg);border:1px solid var(--border2);border-radius:7px;color:var(--text2);font-size:12px;font-weight:600;padding:5px 12px;cursor:pointer;transition:all .18s;font-family:inherit}
+.lvl-btn:hover{border-color:var(--accent);color:var(--text)}
+.lvl-btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ═══ CORRECTION TOGGLES ═══ */
+.ckrow{display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer}
+.ckrow input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+.ckrow span{font-size:13px;color:var(--text)}
+
 /* bg gradient */
 body::before{
   content:'';position:fixed;inset:0;
@@ -528,6 +636,7 @@ body::before{
 }
 #topbar,#layout{position:relative;z-index:1}
 </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -542,7 +651,13 @@ body::before{
     <span class="logo-icon">💫</span>
     <span class="logo-text">Dizzy</span>
   </div>
-  <div id="topbar-right">
+  <div id="mode-sel">
+      <button class="mode-btn" data-mode="normal">Normal</button>
+      <button class="mode-btn on" data-mode="teacher">Teacher</button>
+      <button class="mode-btn" data-mode="immersion">Immersion</button>
+    </div>
+    <div id="topbar-right">
+    <button class="tb-btn" id="vocab-btn" title="Vocabulary Notebook">📖</button>
     <button class="tb-btn" id="nc-top" title="New Chat">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
@@ -622,6 +737,25 @@ body::before{
   </div>
 </div>
 
+<!-- VOCABULARY PANEL -->
+<div id="vocab-panel">
+  <div class="vp-hd">
+    <span style="font-size:16px">📖</span>
+    <span class="vp-title">Vocabulary Notebook</span>
+    <button class="vp-x" id="vocab-close">✕</button>
+  </div>
+  <div class="vp-bd">
+    <div class="vp-acts">
+      <input type="text" id="vocab-inp" placeholder="Type a word to add...">
+      <button id="vocab-add-btn">Add</button>
+    </div>
+    <div class="vp-review">
+      <button id="review-btn">📅 Today's Review (<span id="review-count">0</span>)</button>
+    </div>
+    <div id="vocab-list"></div>
+  </div>
+</div>
+
 <!-- SELECTION POPUP -->
 <div id="spop"><button id="spop-btn">🌐 Translate to Persian</button></div>
 
@@ -646,6 +780,7 @@ body::before{
     <div class="mtabs">
       <div class="mtab on" data-tab="chat">🤖 Chat API</div>
       <div class="mtab" data-tab="agent">🔧 Agent API</div>
+      <div class="mtab" data-tab="learn">📚 Learning</div>
       <div class="mtab" data-tab="look">🎨 Appearance</div>
     </div>
     <div class="modal-bd">
@@ -691,6 +826,56 @@ body::before{
         </div>
       </div>
 
+      <div class="tpanel" id="tab-learn">
+        <div class="fsec">
+          <div class="fsec-t">🎓 Learning Mode</div>
+          <div class="fgrp">
+            <label class="flbl">Current Mode</label>
+            <div class="lvl-sel" id="mode-opts">
+              <button class="lvl-btn" data-m="normal">Normal</button>
+              <button class="lvl-btn" data-m="teacher">Teacher</button>
+              <button class="lvl-btn" data-m="immersion">Immersion</button>
+            </div>
+            <div class="fhint" id="mode-desc">Teacher mode: Dizzy acts as your English teacher.</div>
+          </div>
+        </div>
+        <div class="fsec">
+          <div class="fsec-t">📊 English Level</div>
+          <div class="fgrp">
+            <label class="flbl">Your Level (CEFR)</label>
+            <div class="lvl-sel" id="level-opts">
+              <button class="lvl-btn" data-l="A1">A1</button>
+              <button class="lvl-btn" data-l="A2">A2</button>
+              <button class="lvl-btn" data-l="B1">B1</button>
+              <button class="lvl-btn" data-l="B2">B2</button>
+              <button class="lvl-btn" data-l="C1">C1</button>
+              <button class="lvl-btn" data-l="C2">C2</button>
+            </div>
+          </div>
+        </div>
+        <div class="fsec">
+          <div class="fsec-t">📝 Learning Prompt</div>
+          <div class="fgrp">
+            <label class="flbl">Dizzy's Learning Memory</label>
+            <textarea id="lp-area" placeholder="e.g. User prefers short grammar explanations..."></textarea>
+            <div class="lp-count" id="lp-count">0 / 15000 chars</div>
+            <div class="lp-hint">This is Dizzy's learning memory for you. You can edit or reset it at any time. It updates automatically when you tell Dizzy about new learning preferences in Teacher mode.</div>
+          </div>
+          <div class="fgrp" style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn-c" id="lp-reset" style="font-size:12px;padding:6px 14px">🗑️ Reset</button>
+          </div>
+        </div>
+        <div class="fsec">
+          <div class="fsec-t">✏️ Correction Settings (Teacher Mode)</div>
+          <div class="fgrp">
+            <label class="ckrow"><input type="checkbox" id="ck-grammar" checked><span>Grammar corrections</span></label>
+            <label class="ckrow"><input type="checkbox" id="ck-vocab" checked><span>Vocabulary suggestions</span></label>
+            <label class="ckrow"><input type="checkbox" id="ck-explain" checked><span>Grammar explanations</span></label>
+            <label class="ckrow"><input type="checkbox" id="ck-pronun"><span>Pronunciation help</span></label>
+          </div>
+        </div>
+      </div>
+
       <div class="tpanel" id="tab-look">
         <div class="fsec">
           <div class="fsec-t">🎨 Appearance</div>
@@ -713,6 +898,21 @@ body::before{
   </div>
 </div>
 
+<!-- REVIEW OVERLAY -->
+<div class="overlay" id="review-overlay">
+  <div class="modal" style="width:520px">
+    <div class="modal-hd">
+      <span style="font-size:19px">📅</span>
+      <span class="modal-title">Today's Review</span>
+      <button class="modal-x" id="review-x">✕</button>
+    </div>
+    <div class="modal-bd" id="review-bd"></div>
+    <div class="modal-ft">
+      <button class="btn-c" id="review-close">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div id="toast"></div>
 
@@ -723,7 +923,12 @@ body::before{
 var S = {
   cb: {url:'', key:'', mdl:''},
   ag: {url:'', key:'', mdl:''},
-  font: ''
+  font: '',
+  mode: 'teacher',
+  level: 'A2',
+  learningPrompt: '',
+  corrections: {grammar:true, vocabulary:true, explanations:true, pronunciation:false},
+  vocab: []
 };
 var CHATS = {};          // id -> {title, msgs:[{role,content,atts}]}
 var CID   = null;        // current chat id
@@ -736,7 +941,20 @@ var faTimer = null;
 //  PERSIST
 // ══════════════════════════════════════════════
 function saveS(){ try{ localStorage.setItem('dz_s', JSON.stringify(S)); }catch(e){} }
-function loadS(){ try{ var r=localStorage.getItem('dz_s'); if(r) S=JSON.parse(r); }catch(e){} }
+function loadS(){
+  try{
+    var r=localStorage.getItem('dz_s');
+    if(r){
+      var parsed=JSON.parse(r);
+      S=Object.assign({}, S, parsed);
+      if(!S.mode) S.mode='teacher';
+      if(!S.level) S.level='A2';
+      if(!S.learningPrompt) S.learningPrompt='';
+      if(!S.corrections) S.corrections={grammar:true,vocabulary:true,explanations:true,pronunciation:false};
+      if(!S.vocab) S.vocab=[];
+    }
+  }catch(e){}
+}
 function saveCh(){ try{ localStorage.setItem('dz_c', JSON.stringify(CHATS)); }catch(e){} }
 function loadCh(){ try{ var r=localStorage.getItem('dz_c'); if(r) CHATS=JSON.parse(r); }catch(e){} }
 
@@ -888,6 +1106,15 @@ function openCfg(){
   document.getElementById('ag-key').value = S.ag.key;
   document.getElementById('ag-mdl').value = S.ag.mdl;
   document.getElementById('ap-font').value = S.font;
+  // Learning settings
+  document.getElementById('lp-area').value = S.learningPrompt || '';
+  document.getElementById('ck-grammar').checked = (S.corrections&&S.corrections.grammar)!==false;
+  document.getElementById('ck-vocab').checked = (S.corrections&&S.corrections.vocabulary)!==false;
+  document.getElementById('ck-explain').checked = (S.corrections&&S.corrections.explanations)!==false;
+  document.getElementById('ck-pronun').checked = !!(S.corrections&&S.corrections.pronunciation);
+  updateModeUI();
+  updateLevelUI();
+  updateLPCount();
   updateFP();
   modal.classList.add('open');
 }
@@ -923,8 +1150,17 @@ document.getElementById('cfg-save').onclick = function(){
   S.ag.key = document.getElementById('ag-key').value.trim();
   S.ag.mdl = document.getElementById('ag-mdl').value.trim();
   S.font   = document.getElementById('ap-font').value.trim();
+  S.learningPrompt = document.getElementById('lp-area').value.trim();
+  S.corrections = {
+    grammar: document.getElementById('ck-grammar').checked,
+    vocabulary: document.getElementById('ck-vocab').checked,
+    explanations: document.getElementById('ck-explain').checked,
+    pronunciation: document.getElementById('ck-pronun').checked
+  };
+  compactLP();
   saveS();
   applyFont(S.font);
+  applyMode();
   closeCfg();
   toast('Settings saved ✓');
 };
@@ -1040,9 +1276,10 @@ async function doSend(){
     openCfg(); return;
   }
 
-  // Block Persian
-  if(hasPersian(txt)){
-    toast('🇬🇧 Please write in English! Use the convert button below to translate.');
+  // Mode-based language handling
+  var mode = S.mode || 'normal';
+  if(mode === 'immersion' && hasPersian(txt)){
+    toast('🇬🇧 Immersion mode: Please write in English!');
     return;
   }
 
@@ -1091,7 +1328,7 @@ async function doSend(){
 
 function buildHistory(){
   var msgs = CHATS[CID].msgs;
-  var out = [{role:'system', content:'You are Dizzy, a helpful AI assistant and English learning companion. Always respond in clear, well-formatted English. When providing code, use proper markdown code blocks with language tags.'}];
+  var out = [{role:'system', content: buildSystemPrompt()}];
   msgs.forEach(function(m){
     if(m.role==='user'){
       var parts = buildParts(m.content, m.atts||[]);
@@ -1164,8 +1401,9 @@ async function streamAI(messages, bubble){
     }
   }
   cur.remove();
-  renderMd(bubble, raw);
-  bubble._raw=raw;
+  var processed = processResponse(raw);
+  renderMd(bubble, processed);
+  bubble._raw=processed;
 }
 
 // ══════════════════════════════════════════════
@@ -1211,75 +1449,230 @@ var _codeIdx=0;
 function parseFull(raw){
   _codeMap={}; _codeIdx=0;
   var html='';
-  // Strip thought tags
-  var tRe=/<thought>([\s\S]*?)<\/thought>/gi;
-  var last=0, m;
-  while((m=tRe.exec(raw))!==null){
-    if(m.index>last) html+=parseMd(raw.slice(last,m.index));
-    var body=m[1].trim();
-    html+='<div class="thk"><div class="thk-hd"><span>🧠</span> Thinking<svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="thk-bd">'+esc(body)+'</div></div>';
-    last=tRe.lastIndex;
+  // First, extract correction blocks, treating them as atomic
+  var segments = [];
+  var re = /<correction>([\s\S]*?)<\/correction>/gi;
+  var last = 0, m;
+  while((m = re.exec(raw)) !== null){
+    if(m.index > last) segments.push({type:'text', content: raw.slice(last, m.index)});
+    segments.push({type:'correction', content: m[1].trim()});
+    last = re.lastIndex;
   }
-  if(last<raw.length) html+=parseMd(raw.slice(last));
+  if(last < raw.length) segments.push({type:'text', content: raw.slice(last)});
+
+  // Now process each segment: text goes through thought+md, correction goes through renderCorrectionBlock
+  for(var i=0; i<segments.length; i++){
+    var seg = segments[i];
+    if(seg.type === 'correction'){
+      html += renderCorrectionBlock(seg.content);
+    } else {
+      // Process thought tags inside this text segment
+      var tRe = /<thought>([\s\S]*?)<\/thought>/gi;
+      var tLast = 0, tm;
+      var tHtml = '';
+      while((tm = tRe.exec(seg.content)) !== null){
+        if(tm.index > tLast) tHtml += parseMd(seg.content.slice(tLast, tm.index));
+        var body = tm[1].trim();
+        tHtml += '<div class="thk"><div class="thk-hd"><span>🧠</span> Thinking<svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="thk-bd">'+esc(body)+'</div></div>';
+        tLast = tRe.lastIndex;
+      }
+      if(tLast < seg.content.length) tHtml += parseMd(seg.content.slice(tLast));
+      html += tHtml;
+    }
+  }
+  return html;
+}
+
+function renderCorrectionBlock(body){
+  // Extract original, corrected, note from body
+  var orig = '', corr = '', note = '';
+  var origMatch = body.match(/<original>([\s\S]*?)<\/original>/i);
+  var corrMatch = body.match(/<corrected>([\s\S]*?)<\/corrected>/i);
+  var noteMatch = body.match(/<note>([\s\S]*?)<\/note>/i);
+  if(origMatch) orig = origMatch[1].trim();
+  if(corrMatch) corr = corrMatch[1].trim();
+  if(noteMatch) note = noteMatch[1].trim();
+
+  // Fallback: if no sub-tags, try splitting by lines (old format)
+  if(!orig && !corr && !note){
+    var lines = body.split('\n').map(l=>l.trim()).filter(l=>l);
+    // We'll try to find "You wrote:" and "Better:" lines
+    for(var i=0; i<lines.length; i++){
+      if(lines[i].startsWith('You wrote:')) orig = lines[i].replace('You wrote:','').trim();
+      else if(lines[i].startsWith('Better:')) corr = lines[i].replace('Better:','').trim();
+      else if(lines[i].startsWith('💡')) note = lines[i].replace('💡','').trim();
+    }
+  }
+
+  var html = '<div class="correction-block">';
+  html += '<div class="cb-title">✏️ Correction</div>';
+  if(orig) html += '<div class="cb-wrote">You wrote: <span style="color:var(--red); text-decoration: line-through;">' + esc(orig) + '</span></div>';
+  if(corr) html += '<div class="cb-better">Better: <span>' + esc(corr) + '</span></div>';
+  if(note) html += '<div class="cb-note">💡 ' + esc(note) + '</div>';
+  html += '</div>';
+  return html;
+}
+
+// ── Inline formatting: escapes HTML, then applies code/bold/italic/links
+function mdInline(text){
+  if(text == null) return '';
+  text = esc(text);
+
+  // Inline code spans (protected first so markup inside isn't touched)
+  var codeSpans = [];
+  text = text.replace(/`([^`\n]+)`/g, function(_, code){
+    codeSpans.push(code);
+    return '\u0001'+(codeSpans.length-1)+'\u0002';
+  });
+
+  // Links: [text](url)
+  text = text.replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g, function(_, t, url){
+    return '<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+t+'</a>';
+  });
+
+  // Bold: **text** / __text__
+  text = text.replace(/\*\*([^\s*][^*\n]*?)\*\*/g, '<strong>$1</strong>');
+  text = text.replace(/__([^\s_][^_\n]*?)__/g, '<strong>$1</strong>');
+
+  // Italic: *text* / _text_ (underscore requires non-word boundary to spare snake_case)
+  text = text.replace(/\*([^\s*][^*\n]*?)\*/g, '<em>$1</em>');
+  text = text.replace(/(^|[^\w])_([^\s_][^_\n]*?)_(?!\w)/g, '$1<em>$2</em>');
+
+  // Restore code spans
+  text = text.replace(/\u0001(\d+)\u0002/g, function(_, idx){
+    return '<code>'+codeSpans[parseInt(idx,10)]+'</code>';
+  });
+
+  return text;
+}
+
+function buildTable(rows){
+  var html = '<table>';
+  for(var r=0; r<rows.length; r++){
+    var raw = rows[r].trim();
+    if(raw.charAt(0)==='|') raw = raw.slice(1);
+    if(raw.charAt(raw.length-1)==='|') raw = raw.slice(0,-1);
+    var cells = raw.split('|').map(function(c){ return c.trim(); });
+    var tag = (r===0) ? 'th' : 'td';
+    html += (r===0) ? '<thead><tr>' : '<tr>';
+    for(var c=0; c<cells.length; c++){
+      html += '<'+tag+'>'+mdInline(cells[c])+'</'+tag+'>';
+    }
+    html += (r===0) ? '</tr></thead><tbody>' : '</tr>';
+  }
+  html += '</tbody></table>';
   return html;
 }
 
 function parseMd(txt){
-  // ── Code blocks (must be first)
-  txt = txt.replace(/```(\w*)\n?([\s\S]*?)```/g, function(_,lang,code){
-    var language=lang||'text';
-    var idx='__code__'+(++_codeIdx);
-    // store raw code with a placeholder; we'll attach it after innerHTML is set
-    _codeMap[idx]=code.trimEnd();
-    return '<div class="ccard"><div class="ccard-hd"><div class="cdots"><span class="cdot cdr"></span><span class="cdot cdy"></span><span class="cdot cdg"></span></div><span class="clang">'+esc(language)+'</span><button class="ccopy" data-idx="'+idx+'">Copy</button></div><div class="cbody">'+esc(code.trimEnd())+'</div></div>';
+  if(txt == null) return '';
+  txt = String(txt).replace(/\r\n/g, '\n');
+
+  // ── Extract fenced code blocks first so nothing inside is touched by other rules
+  var codeBlocks = [];
+  txt = txt.replace(/```([a-zA-Z0-9_+-]*)[ \t]*\n?([\s\S]*?)```/g, function(_, lang, code){
+    codeBlocks.push({ lang: lang || 'text', code: code.replace(/\n$/,'') });
+    return '\u0003CB'+(codeBlocks.length-1)+'\u0003';
   });
 
-  // ── Inline code
-  txt = txt.replace(/`([^`\n]+)`/g, function(_,c){ return '<code>'+esc(c)+'</code>'; });
+  var lines = txt.split('\n');
+  var html = '';
+  var paraBuf = [];
 
-  // ── Headings
-  txt = txt.replace(/^#{3} (.+)$/gm,'<h3>$1</h3>');
-  txt = txt.replace(/^#{2} (.+)$/gm,'<h2>$1</h2>');
-  txt = txt.replace(/^#{1} (.+)$/gm,'<h1>$1</h1>');
+  function flushPara(){
+    if(paraBuf.length){
+      html += '<p>'+mdInline(paraBuf.join('\n')).replace(/\n/g,'<br>')+'</p>';
+      paraBuf = [];
+    }
+  }
 
-  // ── Bold / italic
-  txt = txt.replace(/\*\*\*(.+?)\*\*\*/g,'<strong><em>$1</em></strong>');
-  txt = txt.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-  txt = txt.replace(/\*(.+?)\*/g,'<em>$1</em>');
+  var i = 0;
+  while(i < lines.length){
+    var line = lines[i];
 
-  // ── Links
-  txt = txt.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+    // Fenced code block placeholder
+    var cbMatch = /^\u0003CB(\d+)\u0003$/.exec(line.trim());
+    if(cbMatch){
+      flushPara();
+      var cb = codeBlocks[parseInt(cbMatch[1],10)];
+      var idx = _codeIdx++;
+      _codeMap[idx] = cb.code;
+      html += '<div class="ccard"><div class="ccard-hd"><div class="cdots"><span class="cdot cdr"></span><span class="cdot cdy"></span><span class="cdot cdg"></span></div><span class="clang">'+esc(cb.lang)+'</span><button class="ccopy" data-idx="'+idx+'">Copy</button></div><div class="cbody">'+esc(cb.code)+'</div></div>';
+      i++;
+      continue;
+    }
 
-  // ── Blockquote
-  txt = txt.replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>');
+    // Blank line
+    if(!line.trim()){
+      flushPara();
+      i++;
+      continue;
+    }
 
-  // ── HR
-  txt = txt.replace(/^---+$/gm,'<hr>');
+    // Headers
+    var hMatch = /^(#{1,3})\s+(.*)$/.exec(line);
+    if(hMatch){
+      flushPara();
+      var lvl = hMatch[1].length;
+      html += '<h'+lvl+'>'+mdInline(hMatch[2].trim())+'</h'+lvl+'>';
+      i++;
+      continue;
+    }
 
-  // ── Lists
-  // ordered
-  txt = txt.replace(/^(\d+)\. (.+)$/gm, function(_,n,item){ return '<li data-ol="1">'+item+'</li>'; });
-  txt = txt.replace(/(<li data-ol="1">[\s\S]*?<\/li>(\n|$))+/g, function(m){
-    return '<ol>'+m.replace(/\n/g,'')+'</ol>';
-  });
-  // unordered
-  txt = txt.replace(/^[*\-] (.+)$/gm,'<li>$1</li>');
-  txt = txt.replace(/(<li>(?![\s\S]*?data-ol)[\s\S]*?<\/li>(\n|$))+/g, function(m){
-    return '<ul>'+m.replace(/\n/g,'')+'</ul>';
-  });
+    // Horizontal rule
+    if(/^(?:-{3,}|\*{3,}|_{3,})$/.test(line.trim())){
+      flushPara();
+      html += '<hr>';
+      i++;
+      continue;
+    }
 
-  // ── Paragraphs
-  var blocks = txt.split(/\n{2,}/);
-  blocks = blocks.map(function(b){
-    b=b.trim();
-    if(!b) return '';
-    if(/^<(h[1-3]|div|ul|ol|li|blockquote|hr|pre|table|ccard)/.test(b)) return b;
-    if(/^<\/?(ul|ol)/.test(b)) return b;
-    return '<p>'+b.replace(/\n/g,'<br>')+'</p>';
-  });
-  txt = blocks.join('\n');
+    // Blockquote
+    if(/^>\s?/.test(line)){
+      flushPara();
+      var qLines = [];
+      while(i < lines.length && /^>\s?/.test(lines[i])){
+        qLines.push(lines[i].replace(/^>\s?/,''));
+        i++;
+      }
+      html += '<blockquote>'+mdInline(qLines.join('\n')).replace(/\n/g,'<br>')+'</blockquote>';
+      continue;
+    }
 
-  return txt;
+    // Table: header row followed by a separator row of ---|---
+    if(/^\|.*\|\s*$/.test(line.trim()) && i+1 < lines.length && /^\|?[\s:\-|]+\|?$/.test(lines[i+1].trim()) && /-/.test(lines[i+1])){
+      flushPara();
+      var tRows = [line];
+      i += 2;
+      while(i < lines.length && /^\|.*\|\s*$/.test(lines[i].trim())){
+        tRows.push(lines[i]);
+        i++;
+      }
+      html += buildTable(tRows);
+      continue;
+    }
+
+    // Lists: unordered (-,*,+) or ordered (1.)
+    if(/^\s*(?:[-*+]|\d+\.)\s+/.test(line)){
+      flushPara();
+      var ordered = /^\s*\d+\.\s+/.test(line);
+      var tag = ordered ? 'ol' : 'ul';
+      var items = [];
+      while(i < lines.length && /^\s*(?:[-*+]|\d+\.)\s+/.test(lines[i])){
+        items.push(lines[i].replace(/^\s*(?:[-*+]|\d+\.)\s+/, ''));
+        i++;
+      }
+      html += '<'+tag+'>'+items.map(function(it){ return '<li>'+mdInline(it)+'</li>'; }).join('')+'</'+tag+'>';
+      continue;
+    }
+
+    // Plain paragraph text
+    paraBuf.push(line);
+    i++;
+  }
+  flushPara();
+
+  return html;
 }
 
 // After innerHTML is set, we hook up copy button code refs
@@ -1434,13 +1827,397 @@ document.getElementById('tp-close').onclick = function(){
   document.getElementById('tpanel').classList.remove('open');
 };
 
+
+// ══════════════════════════════════════════════
+//  LEARNING SYSTEM
+// ══════════════════════════════════════════════
+
+function buildSystemPrompt(){
+  var mode = S.mode || 'normal';
+  var lines = ['You are Dizzy, '];
+
+  if(mode === 'normal'){
+    lines.push('a helpful AI assistant. The user may write in Persian or English. Respond naturally and helpfully.');
+    lines.push('Do NOT use or mention any Learning Prompt. Do NOT update any learning preferences.');
+  }
+  else if(mode === 'teacher'){
+    lines.push('an English teacher and language learning assistant.');
+    lines.push("The user's English level is " + (S.level || 'A2') + ".");
+    if(S.learningPrompt && S.learningPrompt.trim()){
+      lines.push("\nLearning preferences:\n" + S.learningPrompt.trim());
+    }
+    lines.push("\nTeaching rules:");
+    lines.push('- Identify and correct important English mistakes. Do NOT overwhelm with too many corrections.');
+    lines.push('- For unnatural but understandable sentences, use "More natural:" instead of "Wrong".');
+    lines.push('- Keep corrections brief, then continue the conversation naturally.');
+    lines.push('- Adapt explanation complexity to the user\'s level.');
+    if((S.level||'A2').startsWith('A')){
+      lines.push('- For beginner levels (A1-A2), explain mistakes in simple Persian.');
+    }
+    lines.push('- Avoid complex grammar terminology without simple explanation.');
+    lines.push('- Do NOT correct every tiny mistake.');
+    if(S.corrections && S.corrections.grammar !== false){
+      lines.push('- When a correction is needed, output a correction block using the following format (EXACTLY as shown, no extra text outside it):\n<correction>\n<original>User\'s original sentence</original>\n<corrected>Corrected sentence</corrected>\n<note>Brief explanation in Persian or simple English</note>\n</correction>');
+    }
+    // Vocab integration
+    var rv = getReviewWords(8);
+    if(rv.length){
+      lines.push('\nNaturally incorporate these vocabulary words into examples, exercises, or conversation when relevant: ' + rv.map(function(v){return v.word;}).join(', '));
+    }
+    lines.push('\nIf the user explicitly states a new learning preference or rule (e.g. "from now on do X"), update the learning preferences by outputting at the very end of your response:\n<lp-update>\n[updated concise learning prompt]\n</lp-update>');
+    lines.push('If the user mentions saving a word to their vocabulary, or if a useful new word comes up, output:\n<vocab word="WORD" meaning="MEANING" pronunciation="PRONUNCIATION" example="EXAMPLE" level="LEVEL" />');
+  }
+  else if(mode === 'immersion'){
+    lines.push('a friendly native English speaker having a natural conversation.');
+    lines.push('Respond COMPLETELY in English. Never use Persian.');
+    lines.push('Keep the tone casual, natural, and immersive.');
+    lines.push('Do NOT use or mention any Learning Prompt. Do NOT update any learning preferences.');
+  }
+
+  return lines.join('\n');
+}
+
+function processResponse(raw){
+  if(!raw) return raw;
+  var mode = S.mode || 'normal';
+
+  if(mode === 'teacher'){
+    // Extract learning prompt updates
+    var lpMatch = raw.match(/<lp-update>([\s\S]*?)<\/lp-update>/);
+    if(lpMatch){
+      var updated = lpMatch[1].trim();
+      if(updated && updated !== S.learningPrompt){
+        S.learningPrompt = updated;
+        saveS();
+        toast('Learning preferences updated ✓');
+      }
+      raw = raw.replace(/<lp-update>[\s\S]*?<\/lp-update>/, '').trim();
+    }
+
+    // Extract vocab additions
+    var vocabRe = /<vocab\s+word="([^"]+)"\s+meaning="([^"]*)"\s+pronunciation="([^"]*)"\s+example="([^"]*)"\s+level="([^"]*)"\s*\/>/g;
+    var m;
+    while((m = vocabRe.exec(raw)) !== null){
+      addVocab(m[1], m[2], m[3], m[4], m[5]);
+    }
+    raw = raw.replace(/<vocab\s+[^>]+\/>/g, '').trim();
+  }
+
+  return raw;
+}
+
+// ══════════════════════════════════════════════
+//  VOCABULARY
+// ══════════════════════════════════════════════
+
+function addVocab(word, meaning, pronunciation, example, level){
+  var w = word.toLowerCase().trim();
+  var existing = S.vocab.find(function(v){ return v.word.toLowerCase() === w; });
+  if(existing){
+    existing.times_seen = (existing.times_seen||0) + 1;
+    existing.last_reviewed = Date.now();
+    saveS();
+    renderVocab();
+    return existing;
+  }
+  S.vocab.push({
+    word: word.trim(),
+    meaning: meaning || '',
+    pronunciation: pronunciation || '',
+    example: example || '',
+    level: level || 'B1',
+    status: 'new',
+    times_seen: 1,
+    times_used: 0,
+    last_reviewed: Date.now(),
+    added_at: Date.now()
+  });
+  saveS();
+  renderVocab();
+  updateReviewCount();
+  toast('Word saved: ' + word);
+}
+
+function removeVocab(word){
+  var w = word.toLowerCase().trim();
+  S.vocab = S.vocab.filter(function(v){ return v.word.toLowerCase() !== w; });
+  saveS();
+  renderVocab();
+  updateReviewCount();
+}
+
+function getReviewWords(limit){
+  if(!S.vocab || !S.vocab.length) return [];
+  var now = Date.now();
+  var list = S.vocab.slice().sort(function(a, b){
+    var daysA = (now - (a.last_reviewed||0)) / 86400000;
+    var daysB = (now - (b.last_reviewed||0)) / 86400000;
+    var scoreA = daysA + (a.status==='new'?10 : a.status==='learning'?5 : a.status==='familiar'?2 : 0);
+    var scoreB = daysB + (b.status==='new'?10 : b.status==='learning'?5 : b.status==='familiar'?2 : 0);
+    return scoreB - scoreA;
+  });
+  return list.slice(0, limit || 5);
+}
+
+function updateReviewCount(){
+  var el = document.getElementById('review-count');
+  if(el) el.textContent = getReviewWords().length;
+}
+
+function renderVocab(){
+  var el = document.getElementById('vocab-list');
+  if(!el) return;
+  if(!S.vocab || !S.vocab.length){
+    el.innerHTML = '<div class="vempty">No words saved yet.<br>Ask Dizzy to save words, or add them here.</div>';
+    return;
+  }
+  el.innerHTML = '';
+  // Sort by newest first
+  var list = S.vocab.slice().sort(function(a,b){ return (b.added_at||0) - (a.added_at||0); });
+  list.forEach(function(v){
+    var d = document.createElement('div');
+    d.className = 'vitem';
+    d.innerHTML =
+      '<div class="vw">' + esc(v.word) + '<span class="vlevel">' + esc(v.level||'B1') + '</span></div>' +
+      (v.meaning?'<div class="vm">' + esc(v.meaning) + '</div>':'') +
+      (v.pronunciation?'<div class="vpro">🔊 ' + esc(v.pronunciation) + '</div>':'') +
+      (v.example?'<div class="vex">"' + esc(v.example) + '"</div>':'') +
+      '<div class="vmeta">' +
+        '<span class="vst ' + (v.status||'new') + '"></span>' + (v.status||'new') +
+        ' • seen ' + (v.times_seen||0) + 'x' +
+        ' • used ' + (v.times_used||0) + 'x' +
+        '<button class="vdel" data-w="' + esc(v.word) + '" title="Remove">🗑️</button>' +
+      '</div>';
+    el.appendChild(d);
+  });
+  // Attach delete handlers
+  el.querySelectorAll('.vdel').forEach(function(btn){
+    btn.onclick = function(){ removeVocab(btn.dataset.w); };
+  });
+}
+
+function openVocab(){ document.getElementById('vocab-panel').classList.add('open'); renderVocab(); updateReviewCount(); }
+function closeVocab(){ document.getElementById('vocab-panel').classList.remove('open'); }
+
+// ══════════════════════════════════════════════
+//  REVIEW SYSTEM
+// ══════════════════════════════════════════════
+
+var reviewWords = [];
+var reviewIdx = 0;
+
+function startReview(){
+  reviewWords = getReviewWords(5);
+  if(!reviewWords.length){ toast('No words to review right now!'); return; }
+  reviewIdx = 0;
+  document.getElementById('review-overlay').classList.add('open');
+  renderReviewCard();
+}
+
+function renderReviewCard(){
+  var bd = document.getElementById('review-bd');
+  if(reviewIdx >= reviewWords.length){
+    bd.innerHTML = '<div style="text-align:center;padding:30px 10px"><div style="font-size:32px;margin-bottom:10px">🎉</div><div style="font-size:16px;font-weight:700;color:var(--text)">Review complete!</div><div style="font-size:13px;color:var(--text2);margin-top:6px">Great job keeping up with your vocabulary.</div></div>';
+    return;
+  }
+  var v = reviewWords[reviewIdx];
+  bd.innerHTML =
+    '<div class="rcard">' +
+      '<div class="rword">' + esc(v.word) + ' <span style="font-size:12px;color:var(--gold)">' + esc(v.level||'') + '</span></div>' +
+      '<div class="rmeta">' + (v.pronunciation?'🔊 '+esc(v.pronunciation)+' • ':'') + 'Status: ' + (v.status||'new') + '</div>' +
+      '<div class="rq">What does this word mean? Or use it in a sentence.</div>' +
+      '<input type="text" class="rinp" id="rans-inp" placeholder="Your answer...">' +
+      '<div class="rans" id="rans-box"></div>' +
+      '<div class="racts">' +
+        '<button id="rcheck">Check</button>' +
+        '<button id="rskip">Skip</button>' +
+        '<button id="rnext" class="primary" style="display:none">Next →</button>' +
+      '</div>' +
+    '</div>';
+
+  document.getElementById('rcheck').onclick = function(){
+    var ans = document.getElementById('rans-inp').value.trim();
+    if(!ans) return;
+    var box = document.getElementById('rans-box');
+    var correct = false;
+    // Simple check: if answer contains the word or a reasonable attempt
+    if(ans.toLowerCase().indexOf(v.word.toLowerCase()) !== -1 || ans.length > 10){
+      correct = true;
+    }
+    box.style.display = 'block';
+    if(correct){
+      box.className = 'rans ok';
+      box.innerHTML = '✓ Good! <br><strong>Meaning:</strong> ' + esc(v.meaning||'') + '<br><strong>Example:</strong> ' + esc(v.example||'');
+      v.times_used = (v.times_used||0) + 1;
+      if(v.times_used >= 5) v.status = 'mastered';
+      else if(v.times_used >= 3) v.status = 'familiar';
+      else if(v.times_used >= 1) v.status = 'learning';
+    } else {
+      box.className = 'rans no';
+      box.innerHTML = 'Keep practicing! <br><strong>Meaning:</strong> ' + esc(v.meaning||'') + '<br><strong>Example:</strong> ' + esc(v.example||'');
+    }
+    v.last_reviewed = Date.now();
+    v.times_seen = (v.times_seen||0) + 1;
+    saveS();
+    document.getElementById('rcheck').style.display = 'none';
+    document.getElementById('rskip').style.display = 'none';
+    document.getElementById('rnext').style.display = 'block';
+  };
+
+  document.getElementById('rskip').onclick = function(){
+    v.last_reviewed = Date.now();
+    v.times_seen = (v.times_seen||0) + 1;
+    saveS();
+    reviewIdx++;
+    renderReviewCard();
+  };
+
+  document.getElementById('rnext').onclick = function(){
+    reviewIdx++;
+    renderReviewCard();
+  };
+
+  setTimeout(function(){ document.getElementById('rans-inp').focus(); }, 50);
+}
+
+// ══════════════════════════════════════════════
+//  MODE & UI
+// ══════════════════════════════════════════════
+
+function applyMode(){
+  var mode = S.mode || 'normal';
+  // Update topbar buttons
+  document.querySelectorAll('.mode-btn').forEach(function(btn){
+    btn.classList.toggle('on', btn.dataset.mode === mode);
+  });
+  // Update input placeholder
+  var inp = document.getElementById('msg-inp');
+  if(mode === 'normal') inp.placeholder = 'Write a message... 💬';
+  else if(mode === 'teacher') inp.placeholder = 'Write in English... 🇬🇧 (or ask in Persian)';
+  else if(mode === 'immersion') inp.placeholder = 'Write in English... 🇬🇧';
+  // Update settings UI
+  updateModeUI();
+  updateLevelUI();
+}
+
+function updateModeUI(){
+  var mode = S.mode || 'normal';
+  document.querySelectorAll('#mode-opts .lvl-btn').forEach(function(btn){
+    btn.classList.toggle('on', btn.dataset.m === mode);
+  });
+  var desc = document.getElementById('mode-desc');
+  if(desc){
+    if(mode === 'normal') desc.textContent = 'Normal mode: Dizzy behaves like a regular AI assistant. You can write in Persian or English.';
+    else if(mode === 'teacher') desc.textContent = 'Teacher mode: Dizzy acts as your English teacher, corrects mistakes, and adapts to your level.';
+    else if(mode === 'immersion') desc.textContent = 'Immersion mode: Dizzy speaks only English for a fully immersive experience.';
+  }
+}
+
+function updateLevelUI(){
+  var lvl = S.level || 'A2';
+  document.querySelectorAll('#level-opts .lvl-btn').forEach(function(btn){
+    btn.classList.toggle('on', btn.dataset.l === lvl);
+  });
+}
+
+function updateLPCount(){
+  var area = document.getElementById('lp-area');
+  var count = document.getElementById('lp-count');
+  if(!area || !count) return;
+  var len = area.value.length;
+  count.textContent = len + ' / 15000 chars';
+  count.classList.toggle('warn', len > 15000);
+}
+
+function compactLP(){
+  // If too long, keep only lines that look like rules
+  var lp = S.learningPrompt || '';
+  if(lp.length <= 15000) return;
+  var lines = lp.split('\n').filter(function(l){
+    var t = l.trim().toLowerCase();
+    return t && (t.indexOf('prefer')!==-1 || t.indexOf('always')!==-1 || t.indexOf('never')!==-1 || t.indexOf('do not')!==-1 || t.indexOf('when')!==-1 || t.indexOf('user')!==-1 || t.indexOf('level')!==-1);
+  });
+  S.learningPrompt = lines.join('\n').slice(0, 15000);
+  saveS();
+}
+
+
+// ══════════════════════════════════════════════
+//  EVENT LISTENERS — Learning Features
+// ══════════════════════════════════════════════
+
+// Mode selector in topbar
+document.querySelectorAll('.mode-btn').forEach(function(btn){
+  btn.onclick = function(){
+    S.mode = btn.dataset.mode;
+    saveS();
+    applyMode();
+    toast('Mode: ' + S.mode.charAt(0).toUpperCase() + S.mode.slice(1));
+  };
+});
+
+// Vocab panel
+document.getElementById('vocab-btn').onclick = function(){ openVocab(); };
+document.getElementById('vocab-close').onclick = function(){ closeVocab(); };
+document.getElementById('vocab-add-btn').onclick = async function(){
+  var inp = document.getElementById('vocab-inp');
+  var word = inp.value.trim();
+  if(!word) return;
+  if(!S.cb.url||!S.cb.mdl){ toast('⚠️ Configure Chat API first'); openCfg(); return; }
+  document.getElementById('vocab-add-btn').textContent = '...';
+  document.getElementById('vocab-add-btn').disabled = true;
+  try{
+    var prompt = 'Provide vocabulary details for the word "' + word + '" in JSON format with fields: meaning (Persian), pronunciation (Persian phonetics), example (English sentence), level (CEFR like A1, B1, etc.). Respond ONLY with valid JSON: {"meaning":"...","pronunciation":"...","example":"...","level":"..."}';
+    var res = await agentCall(prompt);
+    var clean = res.replace(/```[\w]*|```/g,'').trim();
+    var json = JSON.parse(clean);
+    addVocab(word, json.meaning, json.pronunciation, json.example, json.level);
+    inp.value = '';
+  }catch(err){
+    // Fallback: add without details
+    addVocab(word, '', '', '', 'B1');
+    toast('Added (details unavailable)');
+  }finally{
+    document.getElementById('vocab-add-btn').textContent = 'Add';
+    document.getElementById('vocab-add-btn').disabled = false;
+  }
+};
+document.getElementById('vocab-inp').addEventListener('keydown', function(e){
+  if(e.key==='Enter'){ e.preventDefault(); document.getElementById('vocab-add-btn').click(); }
+});
+
+// Review
+document.getElementById('review-btn').onclick = function(){ startReview(); };
+document.getElementById('review-x').onclick = function(){ document.getElementById('review-overlay').classList.remove('open'); };
+document.getElementById('review-close').onclick = function(){ document.getElementById('review-overlay').classList.remove('open'); };
+
+// Settings learning tab interactions
+document.querySelectorAll('#mode-opts .lvl-btn').forEach(function(btn){
+  btn.onclick = function(){ S.mode = btn.dataset.m; updateModeUI(); };
+});
+document.querySelectorAll('#level-opts .lvl-btn').forEach(function(btn){
+  btn.onclick = function(){ S.level = btn.dataset.l; updateLevelUI(); };
+});
+document.getElementById('lp-area').addEventListener('input', updateLPCount);
+document.getElementById('lp-reset').onclick = function(){
+  if(!confirm('Reset learning prompt? This cannot be undone.')) return;
+  S.learningPrompt = '';
+  document.getElementById('lp-area').value = '';
+  updateLPCount();
+  saveS();
+  toast('Learning prompt reset');
+};
+
 // ══════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════
 loadS();
 loadCh();
 applyFont(S.font);
+applyMode();
 renderList();
+renderVocab();
+updateReviewCount();
 
 // Auto-open settings if not configured
 if(!S.cb.url || !S.cb.mdl){
